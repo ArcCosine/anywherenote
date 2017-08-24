@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>Anywherenote Ver 2017</title>
+  <script src="anywherenote.js"></script>
+</head>
+<body>
+ <div id="result"></div>
+
+ <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react.js"></script>
+ <script src="https://cdn.jsdelivr.net/react/0.14.0-rc1/react-dom.js"></script>
+
+ <script>
+var contacts = [
+{key: 1, name:"Arc Cosine", email: "arc@tunsns.net" },
+{key: 2,name : "Test"},
+{key: 3,name : "Test", email:"test@test.com"}
+  ];
+  var listElements = contacts
+  .filter(function(contact){ return contact.email;})
+  .map(function(contact){
+    return React.createElement("li", {key:contact.key},
+        React.createElement("h2", {}, contact.name),
+        React.createElement("a", {href:"mailto:" + contact.email},contact.email)
+        )
+  });
+
+    var rootElement = 
+    React.createElement("div", {},
+        React.createElement("h1", {}, "Contacts"),
+        React.createElement("ul", {}, listElements)
+        );
+    ReactDOM.render(rootElement, document.getElementById("result"));
+ </script>
+</body>
+</html>

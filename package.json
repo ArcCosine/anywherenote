@@ -1,0 +1,17 @@
+{
+  "name": "anywhernote",
+  "version": "1.0.0",
+  "description": "This note can write memo,anywhere.",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "lint" : "eslint ./src"
+  },
+  "author": "Arc Cosine",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^4.5.0",
+    "webpack": "^3.5.5",
+    "webpack-dev-server": "^2.7.1"
+  }
+}
